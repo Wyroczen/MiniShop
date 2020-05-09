@@ -58,8 +58,6 @@ if(isset($_GET["action"]))
 {
     if($_GET["action"] == "delete")
     {
-        echo '<script>alert("Send money to")</script>';
-        echo '<script>window.location="index.php"</script>';
         foreach($_SESSION["shopping_cart"] as $keys => $values)
         {
             if($values["item_id"] == $_GET["id"])
