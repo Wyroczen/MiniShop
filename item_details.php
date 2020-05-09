@@ -29,19 +29,40 @@ if(isset($_GET["action"]))
             $resultDetails = mysqli_query($connect, $query);
             $query = "SELECT * from products WHERE id=$idforquery";
             $resultProduct = mysqli_query($connect, $query);
+
+            ?>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                <tr>
+                    <th width=="30%">Item Name</th>
+                    <th width=="60%">Description</th>
+                    <th width=="10%">Action</th>
+                </tr>
+            <?php
             if(mysqli_num_rows($resultDetails) > 0)
             {
+
+                while($row = mysqli_fetch_array($resultProduct))
+                {
+                    ?>
+                        <tr>
+                            <td><p class="text-info"><?php echo $row["name"]?></td>
+                    <?php
+                }
+
+
                 while($row = mysqli_fetch_array($resultDetails))
                 {
                     ?>
-                    </div class="col-md-4">
-                        <form>
-                            <p class="text-info"><?php echo $row["description"]?></p>
-                            <a href="index.php?action=return"><span class="text-danger">Return</span></a>
-                        </form>
-                    </div>
+                        
+                            <td><p class="text-info"><?php echo $row["description"]?></p><td>
+                            <td><a href="index.php?action=return"><span class="text-danger">Return</span></a><td>
+                        </tr>
+                    </table>
                     <?php
                 }
+
+                
             }
             ?>
     </body>
