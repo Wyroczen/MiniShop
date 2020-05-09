@@ -55,8 +55,8 @@ if(isset($_GET["action"]))
                 {
                     ?>
                         
-                            <td><p class="text-info"><?php echo $row["description"]?></p><td>
-                            <td><a href="index.php?action=return"><span class="text-danger">Return</span></a><td>
+                            <td><p class="text-info"><?php echo $row["description"]?></p></td>
+                            <td><a href="index.php?action=return"><span class="text-danger">Return</span></a></td>
                         </tr>
                     </table>
                     <?php
