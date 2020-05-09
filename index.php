@@ -21,6 +21,7 @@ if(isset($_POST["add_to_cart"]))
         else
         {
             echo '<script>alert("Item already in shopping cart")</script>';
+            echo '<script>window.location="index.php"</script>';
         }
     }
     else
@@ -46,7 +47,7 @@ if(isset($_POST["add_to_cart"]))
 	<body>
         <br />
         <div class="container" style="width:700px;">
-            <h3 align="center">Shopping Cart</h3><br />
+            <h3 align="center">Shopping With Shops</h3><br />
             <?php
             $query = "SELECT * FROM products ORDER BY id ASC";
             $result = mysqli_query($connect, $query);
@@ -58,7 +59,7 @@ if(isset($_POST["add_to_cart"]))
                     <div class="col-md-4">
                         <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
                             <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
-						        <img src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
+						        <img width="200px" height="auto" src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
 						        <h4 class="text-info"><?php echo $row["name"]; ?></h4>
 						        <h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>
 						        <input type="text" name="quantity" value="1" class="form-control" />
@@ -73,6 +74,44 @@ if(isset($_POST["add_to_cart"]))
                 }
             }
             ?>
+            <div style="clear:both"></div>
+            <br />
+            <h3>Order Details</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <th width=="40%">Item Name</th>
+                        <th width=="10%">Quantity</th>
+                        <th width=="20%">Price</th>
+                        <th width=="15%">Total</th>
+                        <th width=="5%">Action</th>
+                    </tr>
+                    <?php 
+                    if(!empty($_SESSION["shopping_cart"]))
+                    {
+                        $total = 0; //store total of item price
+                        foreach($_SESSION["shopping_cart"] as $keys => $values)
+                        {
+                            ?>
+                            <tr>
+                                <td><?php echo $values["item_name"]; ?></td>
+                                <td><?php echo $values["item_quantity"]; ?></td>
+                                <td>$ <?php echo $values["item_price"]; ?></td>
+                                <td><?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
+                                <td><a href="index.php?action=delete&id=<?php echo $values["item id"]; ?>"><span class="text-danger">Remove</span></a></td>
+                            </tr>
+                            <?php
+                                $total = $total + ($values["item_quantity"] * $values["item_price"]);
+                        }
+                        ?>
+                            <td colspan="3" align="right">Total</td>
+                            <td align="right">$ <?php echo number_format($total, 2); ?></td>
+                        <?php 
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
+        <br />
 	</body>
 </html>
