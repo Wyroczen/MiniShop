@@ -1,8 +1,11 @@
 <?php 
 
 session_start();
-$connect = mysqli_connect("localhost", "root", "", "minishop");
-
+$connect = mysqli_connect("localhost", "klient", "klient", "minishop");
+if(isset($_POST["add_to_cart"]))
+{
+    
+}
 ?>
 <!DOCTYPE html>
 <html>
