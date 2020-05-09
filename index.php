@@ -53,12 +53,12 @@ if(isset($_GET["action"]))
         }
     } else if ($_GET["action"] == "buy")
     {
-        echo '<script>alert("Send money to this bank account: 123321123")</script>';
-        echo '<script>window.location="index.php"</script>';
         foreach($_SESSION["shopping_cart"] as $keys => $values)
         {
             unset($_SESSION["shopping_cart"][$keys]); 
         }
+        header("Location: transaction_details.php");
+        exit();
     } else if($_GET["action"] == "details")
     {
         header("Location: item_details.php?id=".$_GET["id"]);
