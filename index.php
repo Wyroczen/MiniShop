@@ -59,6 +59,10 @@ if(isset($_GET["action"]))
         {
             unset($_SESSION["shopping_cart"][$keys]); 
         }
+    } else if($_GET["action"] == "details")
+    {
+        header("Location: item_details.php?id=".$_GET["id"]);
+        exit();
     }
 }
 ?>
@@ -86,7 +90,8 @@ if(isset($_GET["action"]))
                         <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
                             <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
 						        <img width="200px" height="auto" src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
-                                <h4 class="text-info"><?php echo $row["name"]; ?></h4>
+                                <h4 class="text-info"><a href="index.php?action=details&id=<?php echo $row["id"]; ?>"><?php echo $row["name"]; ?></h4>
+                                <a href="index.php?action=buy"><span class="text-danger">Buy</span></a>
                                 <h4 class="text-info">In stock: <?php echo $row["quantity"]; ?></h4>
                                 <h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>
 						        <input type="text" name="quantity" value="1" class="form-control" />
