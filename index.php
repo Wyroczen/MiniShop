@@ -1,7 +1,14 @@
 <?php 
-
+/**
+ * This file contains both view and logic for displaying main shop view and adding items to cart.
+ *
+ * @author Bartosz Wiśniewski
+ */
 session_start();
 $connect = mysqli_connect("localhost", "klient", "klient", "minishop");
+/**
+ * It will manage adding items to shopping cart.
+ */
 if(isset($_POST["add_to_cart"]))
 {
     if(isset($_SESSION["shopping_cart"]))
@@ -54,6 +61,9 @@ if(isset($_POST["add_to_cart"]))
     }
 }
 
+/**
+ * It will manage removing items from shopping cart.
+ */
 if(isset($_GET["action"]))
 {
     if($_GET["action"] == "delete")
@@ -95,8 +105,22 @@ if(isset($_GET["action"]))
         <div class="container" style="width:700px;">
             <h3 align="center">Shops for sale!</h3><br />
             <?php
+            /**
+             * query variable contains an sql query
+             *
+             * @var String
+             */
             $query = "SELECT * FROM products ORDER BY id ASC";
+            /**
+             * result variable contains result of an sql query which returns all products table
+             *
+             * @var String
+             */
             $result = mysqli_query($connect, $query);
+
+            /**
+             * It will show every item on the list of the items that van be bought
+             */
             if(mysqli_num_rows($result) > 0)
             {
                 while($row = mysqli_fetch_array($result))
@@ -135,6 +159,9 @@ if(isset($_GET["action"]))
                         <th width=="5%">Action</th>
                     </tr>
                     <?php 
+                    /**
+                    * It will show items added to the shopping cart in a form of a table
+                    */
                     if(!empty($_SESSION["shopping_cart"]))
                     {
                         $total = 0; //store total of item price

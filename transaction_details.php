@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file contains both view and logic for displaying details of the transaction.
+ *
+ * @author Bartosz Wiśniewski
+ */
+/**
+ * It will check whether you want to return to the main page, and if yes it will redirect to it.
+ */
 if(isset($_GET["action"]))
 {
     if($_GET["action"] == "return")
