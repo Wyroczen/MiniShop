@@ -1,0 +1,48 @@
+\hypertarget{item__details_8php}{}\doxysection{item\+\_\+details.\+php File Reference}
+\label{item__details_8php}\index{item\_details.php@{item\_details.php}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{item__details_8php_a956617395b85e98d907df712f6d0d3f7}{\$connect}} = mysqli\+\_\+connect(\char`\"{}localhost\char`\"{}, \char`\"{}klient\char`\"{}, \char`\"{}klient\char`\"{}, \char`\"{}minishop\char`\"{})
+\item 
+\mbox{\hyperlink{item__details_8php_ac05a5ad7cfdf44617e43ed2ebba79067}{\$idforquery}} = \$\+\_\+\+G\+ET\mbox{[}\char`\"{}id\char`\"{}\mbox{]}
+\item 
+\mbox{\hyperlink{item__details_8php_af59a5f7cd609e592c41dc3643efd3c98}{\$query}} = \char`\"{}S\+E\+L\+E\+CT $\ast$ F\+R\+OM products\+\_\+details W\+H\+E\+RE id=\$idforquery\char`\"{}
+\item 
+\mbox{\hyperlink{item__details_8php_ad8dd4b7fe5682cae0f662786572367b2}{\$result\+Details}} = mysqli\+\_\+query(\$connect, \$query)
+\item 
+\mbox{\hyperlink{item__details_8php_a1d12612c2deabf4d73ff0e203d931165}{\$result\+Product}} = mysqli\+\_\+query(\$connect, \$query)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{item__details_8php_a956617395b85e98d907df712f6d0d3f7}\label{item__details_8php_a956617395b85e98d907df712f6d0d3f7}} 
+\index{item\_details.php@{item\_details.php}!\$connect@{\$connect}}
+\index{\$connect@{\$connect}!item\_details.php@{item\_details.php}}
+\doxysubsubsection{\texorpdfstring{\$connect}{$connect}}
+{\footnotesize\ttfamily \$connect = mysqli\+\_\+connect(\char`\"{}localhost\char`\"{}, \char`\"{}klient\char`\"{}, \char`\"{}klient\char`\"{}, \char`\"{}minishop\char`\"{})}
+
+\mbox{\Hypertarget{item__details_8php_ac05a5ad7cfdf44617e43ed2ebba79067}\label{item__details_8php_ac05a5ad7cfdf44617e43ed2ebba79067}} 
+\index{item\_details.php@{item\_details.php}!\$idforquery@{\$idforquery}}
+\index{\$idforquery@{\$idforquery}!item\_details.php@{item\_details.php}}
+\doxysubsubsection{\texorpdfstring{\$idforquery}{$idforquery}}
+{\footnotesize\ttfamily \$idforquery = \$\+\_\+\+G\+ET\mbox{[}\char`\"{}id\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{item__details_8php_af59a5f7cd609e592c41dc3643efd3c98}\label{item__details_8php_af59a5f7cd609e592c41dc3643efd3c98}} 
+\index{item\_details.php@{item\_details.php}!\$query@{\$query}}
+\index{\$query@{\$query}!item\_details.php@{item\_details.php}}
+\doxysubsubsection{\texorpdfstring{\$query}{$query}}
+{\footnotesize\ttfamily \$query = \char`\"{}S\+E\+L\+E\+CT $\ast$ F\+R\+OM products\+\_\+details W\+H\+E\+RE id=\$idforquery\char`\"{}}
+
+\mbox{\Hypertarget{item__details_8php_ad8dd4b7fe5682cae0f662786572367b2}\label{item__details_8php_ad8dd4b7fe5682cae0f662786572367b2}} 
+\index{item\_details.php@{item\_details.php}!\$resultDetails@{\$resultDetails}}
+\index{\$resultDetails@{\$resultDetails}!item\_details.php@{item\_details.php}}
+\doxysubsubsection{\texorpdfstring{\$resultDetails}{$resultDetails}}
+{\footnotesize\ttfamily \$result\+Details = mysqli\+\_\+query(\$connect, \$query)}
+
+\mbox{\Hypertarget{item__details_8php_a1d12612c2deabf4d73ff0e203d931165}\label{item__details_8php_a1d12612c2deabf4d73ff0e203d931165}} 
+\index{item\_details.php@{item\_details.php}!\$resultProduct@{\$resultProduct}}
+\index{\$resultProduct@{\$resultProduct}!item\_details.php@{item\_details.php}}
+\doxysubsubsection{\texorpdfstring{\$resultProduct}{$resultProduct}}
+{\footnotesize\ttfamily \$result\+Product = mysqli\+\_\+query(\$connect, \$query)}
+
