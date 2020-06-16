@@ -1,5 +1,5 @@
-This is simple php shop project.
-To run it use xampp, run MiniShopDatabase.sql and then MiniShopDatabaseUser.sql in PhpMyAdmin, and to open site 
-go to localhost/MiniShop/index.php.
-To see generated documentation go to localhost/MiniShop/html/
-![Alt text](sample_images/sample_main_page.jpg?raw=true "Sample Main Page")
+Jest to prosta strona sklepu napisana w PHP.
+Można ją uruchomić korzystając z XAMPP. 
+Przed wejściem na localhost/MiniShop/index.php należy wykonać skrypt MiniShopDatabase.sql oraz MiniShopDatabaseUser.sql w PhpMyAdmin.
+Aby zobaczyć wygenerowaną dokumentację należy wejść na localhost/Minishop/html
+![Alt text](sample_images/sample_main_page.jpg?raw=true "Przykładowa główna strona sklepu")
