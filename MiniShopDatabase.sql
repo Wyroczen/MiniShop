@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 08 Cze 2020, 13:15
+-- Czas generowania: 16 Cze 2020, 11:39
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.3.3
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `minishop`
 --
-CREATE DATABASE IF NOT EXISTS `minishop` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `minishop`;
 
 -- --------------------------------------------------------
 
@@ -44,7 +42,8 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `image`, `price`, `quantity`) VALUES
 (1, 'Sklep Mleczny', 'mleczny.jpg', 100, 1),
-(2, 'Metalowy', 'metalowy.jpg', 100, 1);
+(2, 'Sklep Metalowy', 'metalowy.jpg', 100, 1),
+(3, 'Sklep Obuwniczy', 'obuwniczy.jpg', 1000, 2);
 
 -- --------------------------------------------------------
 
@@ -63,7 +62,8 @@ CREATE TABLE `products_details` (
 
 INSERT INTO `products_details` (`id`, `description`) VALUES
 (1, 'Najlepszy sklep mleczny w okolicy Poznania w konkurancyjnej cenie!'),
-(2, 'Taki sklep metalowy to każdy by chciał.');
+(2, 'Taki sklep metalowy to każdy by chciał.'),
+(3, 'Najlepsze buty w mieście!');
 
 --
 -- Indeksy dla zrzutów tabel
